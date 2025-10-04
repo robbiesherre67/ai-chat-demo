@@ -1,5 +1,9 @@
 # 🔮 Multi-Model AI Chat Demo
 
+This Space runs a Gradio chat UI with a model dropdown.
+
+# 🔮 Multi-Model AI Chat Demo
+
 This repo shows how to build a **Gradio chat UI** with multiple large language models and deploy it publicly.
 
 - **Backend/UI:** Python + Gradio (Hugging Face Spaces)
