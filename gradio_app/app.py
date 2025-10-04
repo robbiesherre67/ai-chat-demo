@@ -72,11 +72,11 @@ with gr.Blocks(theme="soft") as demo:
     chat = gr.ChatInterface(
         fn=chat_fn,
         additional_inputs=[model_dd],
-        examples=[
-            "Summarize: what is the difference between state and props in React?",
-            "Give me 3 Vue 3 Composition API tips.",
-            "Explain Redux Toolkit's createAsyncThunk in 5 lines."
-        ],
+examples=[
+    ["Summarize: what is the difference between state and props in React?", MODEL_CHOICES[0]],
+    ["Give me 3 Vue 3 Composition API tips.", MODEL_CHOICES[0]],
+    ["Explain Redux Toolkit's createAsyncThunk in 5 lines.", MODEL_CHOICES[0]],
+],
     )
 
 if __name__ == "__main__":
