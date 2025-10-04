@@ -1,0 +1,12 @@
+# Node (Vercel)
+vercel_site/node_modules
+vercel_site/.next
+vercel_site/.vercel
+
+# Python (Gradio)
+gradio_app/.venv
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
