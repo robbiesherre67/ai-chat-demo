@@ -1,18 +1,12 @@
-function cleanEmbed(url: string | undefined) {
-  if (!url) return "";
-  return url.replace(/^NEXT_PUBLIC_EMBED_URL\s*=\s*/i, "").trim();
-}
-
 export default function Home() {
-  // Preferred: set NEXT_PUBLIC_EMBED_URL in Vercel to the exact embed URL from HF.
-  const raw = process.env.NEXT_PUBLIC_EMBED_URL;
+  // Prefer the ENV var if you set it in Vercel
+  const fromEnv = process.env.NEXT_PUBLIC_EMBED_URL;
 
-  // Known-good fallbacks (try A, then B):
-  const fallbackA = "https://hf.space/robbiesherre/ai-chat-demo/+?__theme=light";
-  const fallbackB = "https://hf.space/robbiesherre/ai-chat-demo/+";
+  // Known-good embed URL (copyable & works when space is public)
+  const fallback = "https://hf.space/embed/robbiesherre/ai-chat-demo/+?__theme=light";
 
-  const cleaned = cleanEmbed(raw);
-  const embedUrl = cleaned || fallbackA;
+  // If env var is present, use it; otherwise use the known-good embed
+  const embedUrl = (fromEnv && fromEnv.trim()) || fallback;
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center p-6">
@@ -31,13 +25,11 @@ export default function Home() {
             border: "1px solid #e5e7eb",
             borderRadius: 12
           }}
-          // microphone/camera only needed if you use those inputs
           allow="clipboard-read; clipboard-write; microphone; camera"
         />
       </div>
 
-      {/* If the first fallback 404s, swap to fallbackB and redeploy */}
-      <div style={{marginTop: 10, fontSize: 12, opacity: 0.6}}>
+      <div style={{ marginTop: 10, fontSize: 12, opacity: 0.6 }}>
         Using: {embedUrl}
       </div>
     </main>
