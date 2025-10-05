@@ -3,10 +3,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center p-6">
-      <h1 style={{ fontSize: 28, marginBottom: 12 }}>AI Chat Demo (Gradio)</h1>
-      <p style={{ opacity: 0.7, marginBottom: 16 }}>
-        Select a model from the dropdown and start chatting.
-      </p>
+      <h1 style={{ fontSize: 28, marginBottom: 12 }}>Robbie Sherre - AI Chat Demo (Gradio UI)</h1>
       <div style={{ width: "100%", maxWidth: 1000, aspectRatio: "16/10" }}>
         <iframe
           src={embedUrl}
