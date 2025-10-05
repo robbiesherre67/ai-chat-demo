@@ -8,8 +8,8 @@ export default function Home() {
   const raw = process.env.NEXT_PUBLIC_EMBED_URL;
 
   // Known-good fallbacks (try A, then B):
-  const fallbackA = "https://hf.space/embed/robbiesherre/ai-chat-demo/+?__theme=light";
-  const fallbackB = "https://hf.space/embed/robbiesherre/ai-chat-demo/+";
+  const fallbackA = "https://hf.space/robbiesherre/ai-chat-demo/+?__theme=light";
+  const fallbackB = "https://hf.space/robbiesherre/ai-chat-demo/+";
 
   const cleaned = cleanEmbed(raw);
   const embedUrl = cleaned || fallbackA;
