@@ -1,7 +1,5 @@
 export default function Home() {
-  const embedUrl =
-    process.env.NEXT_PUBLIC_EMBED_URL ||
-    "https://robbiesherre-ai-chat-demo.hf.space"; // replace with your exact .hf.space URL
+  const embedUrl = "https://robbiesherre-ai-chat-demo.hf.space/";
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center p-6">
